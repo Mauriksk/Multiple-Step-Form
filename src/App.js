@@ -1,9 +1,11 @@
 
 import { Formik } from 'formik';
-import { Button, TextField } from '@mui/material';
+import { Button, Card, TextField } from '@mui/material';
 import * as yup from 'yup';
 import { InputField } from './components/InputField';
 import { FormStep, MultiStepForm } from './components/MultiStepForm';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { theme } from './theme/theme';
 
 const validationSchema = yup.object({
   name: yup.string().required("Nombre es requerido"),
@@ -12,6 +14,9 @@ const validationSchema = yup.object({
 
 function App() {
   return (
+
+    <ThemeProvider theme={theme} >
+      <Card variant="outlined" style={{maxWidth:505, margin:"0 auto", padding:'20px 5px', marginTop:200}}>
     <div className="App">
       <header className="App-header">
         <MultiStepForm
@@ -65,6 +70,8 @@ function App() {
         </MultiStepForm>
       </header>
     </div>
+    </Card>
+    </ThemeProvider>
   );
 }
 
