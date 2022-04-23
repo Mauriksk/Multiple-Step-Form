@@ -1,6 +1,8 @@
 import { TextField } from '@mui/material'
-import { FieldConfig, useField } from 'formik'
+import { DatePicker } from '@mui/x-date-pickers'
+import { useField } from 'formik'
 import React from 'react'
+import { useState } from 'react'
 
 export const InputField = ({label, ...props}) => {
   
@@ -10,7 +12,7 @@ export const InputField = ({label, ...props}) => {
     <TextField
         fullWidth 
         label={label} 
-        {...field} 
+        {...field}
         {...props} 
         error={ meta.touched && Boolean(meta.error) }
         helperText={meta.touched && meta.error}
@@ -18,3 +20,5 @@ export const InputField = ({label, ...props}) => {
     />
   )
 }
+
+

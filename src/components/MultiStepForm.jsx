@@ -38,7 +38,6 @@ export const MultiStepForm = ({children, initialValues, onSubmit}) => {
             actions.setTouched({})
             next(values)
         }
-
     }
 
     return (
